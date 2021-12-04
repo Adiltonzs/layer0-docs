@@ -1,4 +1,13 @@
-# Routing with EdgeJS
+router.match(
+  {
+    path: '/some-path', // value is route-pattern syntax
+    method: /GET|POST/i, // value is a regular expression
+    cookies: { currency: /^(usd)$/i }, // keys are cookie names, values are regular expressions
+    headers: { 'x-moov-device': /^desktop$/i }, // keys are header names, values are regular expressions
+    query: { page: /^(1|2|3)$/ }, // keys are query parameter names, values are regular expressions
+  },
+  () => {},
+)# Routing with EdgeJS
 
 The `{{ PACKAGE_NAME }}/core` package provides a JavaScript API for controlling routing and caching from your code base rather than a CDN web portal. Using this "{{ EDGEJS_LABEL }}" approach allows this vital routing logic to be properly tested, reviewed, and version controlled, just like the rest of your application code.
 
